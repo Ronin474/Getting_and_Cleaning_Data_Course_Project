@@ -63,12 +63,9 @@ subjects <- sort(unique(mergedSet$subject))
 activities <- read.table("./UCI HAR Dataset/activity_labels.txt")
 colnames(activities)  = c("activityID", "activityName")
 
-# assigning descriptive activity names that will be used in tidy dataset (Requirement #3)
-activityNames <- tolower(activities$activityName)
-
 # merged dataset (Requirement #1)
 mergedSet$activity <- as.factor(mergedSet$activity)
-levels(mergedSet$activity) <- activityNames
+levels(mergedSet$activity) <- tolower(activities$activityName)
 mergedSet$subject <- as.factor(mergedSet$subject)
 levels(mergedSet$subject) <- paste("subject", subjects, sep = "")
 
