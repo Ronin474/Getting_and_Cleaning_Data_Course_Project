@@ -19,11 +19,11 @@ For each record in the dataset it is provided:
 
 #### How to use run_analysis.R
 - Download and unzip the original dataset (folder `UCI HAR Dataset`) in your local drive -> this directory now serves as your "working directory".
-- Put script `run_analysis.R` to working directory (as already mentioned above, this directory must include folder `UCI HAR Dataset`).
+- Put script **run_analysis.R** to working directory (as already mentioned above, this directory must include folder `UCI HAR Dataset`).
 - To run the script in RStudio, set your working directory appropriately, and simply source **run_analysis.R**. After running, the script produces two important data sets (interim "mergedSet" and "finalSet", described in more detail in CodeBook.md)
 and writes single .txt file (`tidyset.txt`; 222 KB in size, features 181 rows (header + 180 data rows)) to the working directory.
 - Average script run-time is cca 30 seconds, although this varies based on system specifications.
 - For loading resulting `tidyset.txt` into RStudio, use the following code: `df <- read.table("./tidyset.txt", header = T, sep = ",")`.
 
 #### Additional Info
-You can find additional information about data, variables, attributes, and data transformations in the `CodeBook.md`.
+You can find additional information about data, variables, attributes, and data transformations in the **CodeBook.md**.

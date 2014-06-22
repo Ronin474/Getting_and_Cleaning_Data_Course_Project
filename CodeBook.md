@@ -12,6 +12,7 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.
 
 Source of the original data: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
 Original data description: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
 ### My Data Information
@@ -111,12 +112,16 @@ Structure of this dataframe is the same as the resulting "mergedSet".
 ### Data transformations performed on original data in Course Project
 Course project defined the following 5 requirements that had to be satisfied in order to successfully prepare tidy data that can be used for later analysis:  
 **Requirement 1.** Merges the training and the test sets to create one data set.
+
 **Requirement 2.** Extracts only the measurements on the mean and standard deviation for each measurement.
+
 **Requirement 3.** Uses descriptive activity names to name the activities in the data set.
+
 **Requirement 4.** Appropriately labels the data set with descriptive variable names.
+
 **Requirement 5.** Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-The attached R script (run_analysis.R) does the following:
+The attached R script (**run_analysis.R**) does the following:
 - first it reads the training and test data ("x_train.txt", "y_train.txt", "subject_test.txt", "x_test.txt", "y_test.txt")
 - extracts feature list (n = 561) from features.txt into **features** and sets column names for easier manipulation
 - with the help of **extractFeatures** only the mean and standard deviation for each measurement (Requirement 2.) are extracted from either training or test data sets
