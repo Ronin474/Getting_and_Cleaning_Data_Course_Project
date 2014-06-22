@@ -47,7 +47,7 @@ colnames(xTrain) <- featureNames
 xTest <- xTest[, extractFeatures]
 colnames(xTest) <- featureNames
 
-# bindind training and test data
+# binding training and test data
 trainSet <- cbind(subjectTrain, rep("train", nrow(subjectTrain)), yTrain, xTrain)
 colnames(trainSet)[1:3] <- c("subject", "data.type", "activity")
 testSet <- cbind(subjectTest, rep("test", nrow(subjectTest)), yTest, xTest)
@@ -63,11 +63,12 @@ subjects <- sort(unique(mergedSet$subject))
 activities <- read.table("./UCI HAR Dataset/activity_labels.txt")
 colnames(activities)  = c("activityID", "activityName")
 
-# merged dataset (Requirement #1)
+# descriptive activity names to name the activities in the data set (Requirement #3)
+# factoring over activities and applying lowercase font
 mergedSet$activity <- as.factor(mergedSet$activity)
 levels(mergedSet$activity) <- tolower(activities$activityName)
 mergedSet$subject <- as.factor(mergedSet$subject)
-levels(mergedSet$subject) <- paste("subject", subjects, sep = "")
+levels(mergedSet$subject) <- paste("subject", subjects, sep = "") # merged dataset (Requirement #1)
 
 # second (tidy) data set with the average of each variable for each activity and each subject (Requirement #5)
 finalSet <- aggregate(mergedSet[, -c(1:3)], by = list(mergedSet$subject, mergedSet$activity), mean)
