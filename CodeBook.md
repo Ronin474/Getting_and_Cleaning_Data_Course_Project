@@ -132,6 +132,6 @@ The attached R script (**run_analysis.R**) does the following:
 - binds training and test data and creates merged set (still not in its final form)
 - extracts activity list (n = 6) from "activity_labels.txt" and sets column names for easier manipulation
 - uses descriptive activity names to name the activities in the data set (Requirement #3) by factoring over activities and applying lowercase font (instructions from last slide of the lecture "Editing Text Variables" (week 4) were followed as much as possible)
-- finalizes merged dataset (Requirement 1.)
-- produces second (tidy) data set with the average of each variable for each activity and each subject (Requirement 5.) (this is achieved by aggregating over each activity and subject)
-- creates .txt file (tidyset.txt) for online submission in the working directory
+- finalizes merged dataset (**mergedSet**) (Requirement 1.)
+- produces second (tidy) data set (**finalSet**) with the average of each variable for each activity and each subject (Requirement 5.) (this is achieved by aggregating over each activity and subject)
+- creates .txt file (`tidyset.txt`) for online submission in the working directory
